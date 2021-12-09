@@ -1,0 +1,62 @@
+※ 질문할 시
+  1. 목적이 뭔지, 원하는게 무엇인지
+  2. 무엇을 해봤는지
+  3. 뭐를 해봤는데 안되는지
+  4. error가 어떻게 생겼는지(어떤 error인지)
+
+※ python standard Library 검색
+
+list(수정가능, mutable) []
+  - 변수 = ["값","값",...]
+  - 사용시 = 변수[index번호]
+  
+  - 변수.append("값") - 값 추가
+  - 변수.insert(index넘버, "값") - 해당 index넘버에 값 추가
+  - 변수.pop(index넘버) - index넘버에 해당하는 값 제거(0부터 시작이고, 기본값은 맨 마지막 값)
+  - 변수.remove("값") - 입력한 값과 같은 첫번째 항목 제거
+  - 변수.reverse() - 역방향으로 변경
+
+tuple(수정 불가능, immutable)  ()
+  - 변수 = ("값","값",...)
+
+dict(매핑, dictionary)  {}
+  - 변수 = {
+			"key값" : "value값",
+			"key값" : "value값", 
+			"key값" : "["value1", "value2",...]
+		  }
+
+
+함수(python의 함수는 {}를 쓰지 않고 들여쓰기로 구분)
+def 함수명(매개변수1(=기본값), ...):
+	처리 알고리즘
+	...
+	
+	return f"fdsa {매개변수1} fdsa {매개변수2} fdsa"
+	※ formatting : 리턴 시 리턴 값이 String일 경우 앞에 f를 붙인 후 {매개변수}를 사용하면 바로 매개변수 사용 가능
+
+
+조건문 if, elif, else
+if 조건:
+	처리
+elif 조건: (=else if)
+	처리
+else:
+	처리
+
+
+반복문 for
+for 변수지정 in 배열변수(ex:list, tuple, dict):
+	print(지정한 변수)
+
+  * 출력값은 배열에 있은 모든 값 출력
+  
+
+module (모듈을 사용하기 위해선 사용할 모듈을 import를 해줘야한다)
+  맨 윗줄에
+  import (module명)
+  기능사용~
+  
+  모듈 안에 원하는 함수만 가져올때
+  from (module명) import (함수명) as (변경하고 싶은 함수명)
+  							  * as는 사용하고자 하는 함수명을 변경하고 싶을 때 사용
