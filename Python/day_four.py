@@ -15,3 +15,5 @@ for page in pages:
     spans.append(page.find("span"))
 
 spans = spans[:-1]
+
+print(spans)
