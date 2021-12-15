@@ -1,4 +1,3 @@
-from typing import Counter
 import requests
 from bs4 import BeautifulSoup
 
@@ -50,11 +49,16 @@ def extract_job(html):  # 페이지 정보를 dict형식으로 변형시키는 �
 def extract_indeed_jobs(last_page):  # 받은 페이지 정보 넘겨주는 함수
     jobs = []
     for page in range(last_page):
-        print(f"Scrapping page {page}")
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, 'html.parser')
         results = soup.find_all("a", {"class": "tapItem"})
         for result in results:
             job = extract_job(result)
             jobs.append(job)
+    return jobs
+
+
+def get_jobs():  # main함수
+    last_page = extract_indeed_pages()
+    jobs = extract_indeed_jobs(last_page)
     return jobs
