@@ -24,14 +24,14 @@ def extract_job(html):  # 페이지 정보를 dict형식으로 변형시키는 �
     title = h2.find("span")["title"]
 
     company = html.find("span", {"class": "companyName"})
-    try:
+    if company:
         company_anchor = company.find("a")
         if company_anchor is not None:
             company = str(company_anchor.string)
         else:
             company = str(company.string)
         company = company.strip()
-    except:
+    else:
         company = None
 
     location = html.find("div", {"class": "companyLocation"}).string
@@ -49,6 +49,7 @@ def extract_job(html):  # 페이지 정보를 dict형식으로 변형시키는 �
 def extract_indeed_jobs(last_page):  # 받은 페이지 정보 넘겨주는 함수
     jobs = []
     for page in range(last_page):
+        print(f"Scrapping Indeed: Page: {page}")
         result = requests.get(f"{URL}&start={page*LIMIT}")
         soup = BeautifulSoup(result.text, 'html.parser')
         results = soup.find_all("a", {"class": "tapItem"})
