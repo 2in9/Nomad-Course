@@ -1,15 +1,32 @@
-const player = {
-    name: "LHS",
-    age: 24,
-    fat: true,
-    habby: "game",
-    hello(aaa, bbb){
-        return aaa+bbb
-    }
-};
-player.fat = false;
-player.lastname = "hahaha"
-player.age += 10;
-console.log(player)
-console.log(player.name)
-console.log(player.hello(1, 2))
+const h1 = document.querySelector("div.hello:first-child h1");
+
+console.dir(h1)
+
+function handleTitleClick() {
+    h1.style.color = "blue"
+}
+function handleMouseEnter () {
+    h1.innerText = "Mouse is here!"
+}
+function handleMouseLeave () {
+    h1.innerText = "Mouse is gone!"
+}
+function handleWindowResize () {
+    document.body.style.backgroundColor = "tomato";
+}
+function hadleWindowCopy () {
+    alert("copier!!!")
+}
+function handleWindowOffline() {
+    alert("SOS!!! no wifi")
+}
+function handleWindowOnline () {
+    alert("all gooood")
+}
+
+h1.addEventListener("click", handleTitleClick)
+h1.addEventListener("mouseenter", handleMouseEnter)
+h1.addEventListener("mouseleave", handleMouseLeave)
+
+window.addEventListener("resize", handleWindowResize)
+window.addEventListener("copy", hadleWindowCopy)
