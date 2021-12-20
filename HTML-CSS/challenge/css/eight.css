@@ -1,0 +1,35 @@
+body {
+  background-color: whitesmoke;
+  width: 470px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+div {
+  height: 400px;
+  width: 200px;
+  background-color: white;
+}
+body > div {
+  margin: 10px;
+  padding: 7px;
+  position: relative;
+}
+div:nth-child(2) .color {
+  background-color: tomato;
+}
+div:nth-child(3) .color {
+  background-color: teal;
+}
+div:nth-child(4) .color {
+  background-color: burlywood;
+}
+div:nth-child(5) .color {
+  background-color: thistle;
+}
+.color > div {
+  position: absolute;
+  height: 130px;
+  top: 25px;
+}
